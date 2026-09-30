@@ -1,0 +1,21 @@
+{
+  "name": "disk-collision-sim",
+  "version": "1.0.0",
+  "description": "Event-driven 2D smooth-disk collision and impulse simulation backend (API + CLI + SQLite)",
+  "type": "module",
+  "bin": {
+    "diskcli": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "serve": "node dist/cli.js serve",
+    "demo": "node dist/cli.js demo",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
