@@ -1,0 +1,27 @@
+{
+  "name": "disk-collision-sim",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Event-driven 2D frictionless disk collision/impulse simulation backend (TypeScript + Node.js + SQLite)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "bin": {
+    "disk-sim": "dist/src/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --experimental-sqlite dist/src/server.js",
+    "serve": "npm run build && node --experimental-sqlite dist/src/server.js",
+    "cli": "node --experimental-sqlite dist/src/cli/index.js",
+    "demo": "node --experimental-sqlite --import tsx --experimental-strip-types scripts/demo.ts",
+    "test": "node --experimental-sqlite --test --import tsx --experimental-strip-types test/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.0"
+  }
+}
